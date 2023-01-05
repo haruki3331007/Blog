@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def index
   end
 
-  def showw
+  def show
   end
 
   def edit
