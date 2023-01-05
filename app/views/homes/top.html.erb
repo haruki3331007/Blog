@@ -1,2 +1,38 @@
-<h1>homes => top</h1>
-<p>ここは最初のページです。</p>
+<header>
+  <%= link_to "Bookers", root_path, class: 'logo' %>
+
+  <ul class="menu">
+    <li><%= link_to "Home", root_path, class: 'fa-solid fa-house-user' %></li>
+    <li><%= link_to "About", root_path, class: 'fa-solid fa-link' %></li>
+    <li><%= link_to "Sign up", new_user_registration_path, class: 'fa-solid fa-user-plus' %></li>
+    <li><%= link_to "Log in",  user_session_path, class: 'fa-solid fa-right-to-bracket' %></li>
+  </ul>
+
+</header>
+
+<main>
+  <div class="main_title">
+    <h1>
+      Welcome to <i class="fa-solid fa-book">Bookers</i>!!
+    </h1>
+  </div>
+
+  <div class="main_text">
+    <p>In <i class="fa-solid fa-book">Bookers</i>,
+      <br>
+      you can share and exchange your opinion, inipressions, and emotions
+      <br>
+      about various books!
+    </p>
+  </div>
+
+  <ul class="main_button">
+    <li><%= link_to "Sign up", new_user_registration_path, class: 'main_button' %></li>
+    <li><%= link_to "Log in",  user_session_path, class: 'main_button' %></li>
+  </ul>
+
+</main>
+
+<footer>
+  <p>CopyRight Infratop.inc</p>
+</footer>
