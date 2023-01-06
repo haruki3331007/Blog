@@ -1,21 +1,3 @@
-<header>
-  <%= link_to "Bookers", root_path, class: 'logo' %>
-
-  <ul class="menu">
-    <li><%= link_to "Home", root_path, class: 'fa-solid fa-house-user' %></li>
-    <% if user_signed_in? %>
-      <li><%= link_to "Users", home_about_path, class: 'fas fa-users' %></li>
-      <li><%= link_to "Books", home_about_path, class: 'fas fa-book-open' %></li>
-      <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'fa-solid fa-right-to-bracket' %></li>
-    <% else %>
-      <li><%= link_to "About", home_about_path, class: 'fa-solid fa-link' %></li>
-      <li><%= link_to "Sign up", new_user_registration_path, class: 'fa-solid fa-user-plus' %></li>
-      <li><%= link_to "Log in",  user_session_path, class: 'fa-solid fa-right-to-bracket' %></li>
-    <% end %>
-  </ul>
-
-</header>
-
 <main>
   <div class="main_title">
     <h1>
@@ -38,7 +20,3 @@
   </ul>
 
 </main>
-
-<footer>
-  <p>CopyRight Infratop.inc</p>
-</footer>
