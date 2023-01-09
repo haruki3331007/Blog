@@ -1,2 +1,33 @@
-<h1>users => edit</h1>
-<p>ここはuserの情報を編集するページです。</p>
+<!--error message-->
+<div class="error_message">
+  <% if @user.errors.any? %>
+    <%= @user.errors.count %> error prohibited this obj from being saved:
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<!--user edit-->
+<div class="container px-2">
+  <div class="row">
+    <div class="offset-md-4 col-md-4 offset-md-4">
+      <h1>User info</h1>
+
+      <%= form_with model: @user do |user| %>
+        <p>Name</p>
+        <%= user.text_field :name, autofocus: true %>
+
+        <p>Image</p>
+        <%= user.file_field :profile_image, accept: "image/*" %>
+
+        <P>Introduction</p>
+        <%= user.text_field :introduction %>
+
+        <%= user.submit "Update User" %>
+      <% end %>
+    </div>
+  </div>
+</div>

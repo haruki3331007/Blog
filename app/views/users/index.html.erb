@@ -1,2 +1,35 @@
-<h1>users => index</h1>
-<p>ここは全てのuserの一覧を表示するページです。</p>
+<div class="container px-2">
+  <div class="row">
+
+    <!--user information-->
+    <div class="user_info col-md-3">
+      <%= render 'books/user_info' %>
+      <%= render 'books/book_info' %>
+    </div>
+
+    <!--all books-->
+    <div class="offset-md-1 col-md-8 px-md-5">
+      <h2>Users</h2>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>image</th>
+            <th>name</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= image_tag user.get_profile_image(80, 80) %></td>
+              <td><%= user.name %></td>
+              <td><%= link_to 'Show', user_path(user.id) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+  </div>
+</div>
